@@ -3,11 +3,11 @@ using System.Collections;
 
 public class exitDoor : MonoBehaviour {
 
-	private CharacterController controller;
+	private Character controller;
 	private LevelManager levelManager;
 
 	void Start(){
-		controller = FindObjectOfType<CharacterController>();
+		controller = FindObjectOfType<Character>();
 		levelManager = FindObjectOfType<LevelManager>();
 	}
 
