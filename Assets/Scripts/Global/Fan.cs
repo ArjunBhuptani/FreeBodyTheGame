@@ -3,6 +3,8 @@ using System.Collections;
 
 public class Fan : MonoBehaviour {
 
+	public float forceValue;
+
 	private bool isPowered = false;
 	private bool isLifted = false;
 
@@ -13,7 +15,6 @@ public class Fan : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		fanObjects = GetComponent<Objects>();
-		roomObjects = FindObjectsOfType<Objects>();
 
 		foreach(Transform child in transform){
 			if (child.name == "fan1"){
@@ -34,6 +35,7 @@ public class Fan : MonoBehaviour {
 			rotateBlades();
 
 			if(!isLifted){
+				roomObjects = FindObjectsOfType<Objects>();
 				foreach(Objects obj in roomObjects){
 					checkPosition(obj);
 				}
@@ -48,9 +50,9 @@ public class Fan : MonoBehaviour {
 
 	void checkPosition(Objects obj){
 		if(obj != null){
-			if(obj.isMovable && Vector3.Distance(this.transform.position, obj.transform.position) <= obj.proximityRange){
+			if(obj.isMovable && Vector3.Distance(this.transform.position, obj.transform.position) <= obj.proximityRange && !obj.getLiftedBool()){
 				Debug.Log("obj name" + obj.name);
-				this.transform.parent = obj.transform;
+				//this.transform.parent = obj.transform;
 				Debug.Log("adding force");
 				//add force in direction of forward fan
 				addForce(obj);
@@ -62,9 +64,9 @@ public class Fan : MonoBehaviour {
 		Collider col = this.GetComponent<Collider>();
 		col.enabled = false;
 
-		Rigidbody rb = this.GetComponentInParent<Rigidbody>();
+		Rigidbody rb = obj.GetComponent<Rigidbody>();
 		rb.isKinematic = false;
-		rb.AddForce(transform.up*80);
+		rb.AddForce(transform.up*forceValue);
 
 	}
 }

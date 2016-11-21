@@ -76,6 +76,12 @@ public class Objects : MonoBehaviour {
 		isLifted = true;
 		character.isLiftingSomething = true;
 		Debug.Log("Lifting " + this.name);
+
+		if(this.GetComponent<Rigidbody>() != null){
+			Rigidbody rb = GetComponent<Rigidbody>();
+			rb.isKinematic = true;
+			Debug.Log("disabling rb for " + this.name);
+		}
 	}
 
 	void dropObject(){
@@ -90,6 +96,12 @@ public class Objects : MonoBehaviour {
 		character.isLiftingSomething = false;
 		isLifted = false;
 		Debug.Log("Dropping " + this.name);
+
+		if(this.GetComponent<Rigidbody>() != null){
+			Rigidbody rb = GetComponent<Rigidbody>();
+			rb.isKinematic = false;
+			Debug.Log("enabling rb for " +  this.name);
+		}
 	}
 
 	void powerObject(){
