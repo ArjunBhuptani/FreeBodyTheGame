@@ -13,3 +13,15 @@ EditorBuildSettings:
     path: Assets/_Scenes/01b Options.unity
   - enabled: 1
     path: Assets/_Scenes/02 ThirdLawProblem.unity
+  - enabled: 1
+    path: Assets/_Scenes/02 PulleyProblem.unity
+  - enabled: 1
+    path: Assets/_Scenes/02 Fan Problem.unity
+  - enabled: 1
+    path: Assets/_Scenes/02 KeyProblem.unity
+  - enabled: 1
+    path: Assets/_Scenes/02 SlippageProblem.unity
+  - enabled: 1
+    path: Assets/_Scenes/02 BossProblem.unity
+  - enabled: 1
+    path: Assets/_Scenes/03 End Screen.unity

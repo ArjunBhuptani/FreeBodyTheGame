@@ -17,7 +17,7 @@ public class LevelManager : MonoBehaviour {
 	}
 
 	public void setWinCondition(){
-		winCondition = !winCondition;
+		winCondition = true;
 	}
 
 	public bool getWinCondition(){
@@ -38,8 +38,8 @@ public class LevelManager : MonoBehaviour {
 	
 	public void LoadNextLevel(){
 		if(winCondition){
-			Scene scene = SceneManager.GetActiveScene();
-			SceneManager.LoadScene(scene.buildIndex + 1);
+			Debug.Log("Loading next level");
+			SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
 		}
 	}
 

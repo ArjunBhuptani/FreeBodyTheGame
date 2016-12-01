@@ -80,6 +80,7 @@ public class Objects : MonoBehaviour {
 		if(this.GetComponent<Rigidbody>() != null){
 			Rigidbody rb = GetComponent<Rigidbody>();
 			rb.isKinematic = true;
+			rb.useGravity = false;
 			Debug.Log("disabling rb for " + this.name);
 		}
 	}
@@ -100,6 +101,7 @@ public class Objects : MonoBehaviour {
 		if(this.GetComponent<Rigidbody>() != null){
 			Rigidbody rb = GetComponent<Rigidbody>();
 			rb.isKinematic = false;
+			rb.useGravity = true;
 			Debug.Log("enabling rb for " +  this.name);
 		}
 	}
