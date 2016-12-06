@@ -10,7 +10,8 @@ public class MirrorBox : MonoBehaviour {
 	private Rigidbody rb;
 	private BoxSpawner boxSpawner;
 	private Objects objects;
-	private Text text;
+	private Text massText;
+	private Character character;
 
 	void Start(){
 		width = Random.Range(0.75f,1.25f);
@@ -21,8 +22,8 @@ public class MirrorBox : MonoBehaviour {
 		rb = GetComponent<Rigidbody>();
 		rb.mass = mass;
 
-		text = FindObjectOfType<Text>();
-		text.text = "Mass of Mirror Box: " + mass;	
+		massText = GameObject.Find("Mass").GetComponent<Text>();
+		massText.text = "Mass of Mirror Box: " + mass;	
 
 		boxSpawner = GameObject.FindObjectOfType<BoxSpawner>();
 		this.transform.SetParent(boxSpawner.transform);
@@ -30,12 +31,16 @@ public class MirrorBox : MonoBehaviour {
 		this.transform.position = new Vector3 (transform.position.x, height/2f + 0.1f, transform.position.z);
 
 		objects = this.GetComponent<Objects>();
+		character = FindObjectOfType<Character>();
 
 	}
 
 	void Update(){
 		if(!objects.getLiftedBool()){
 			this.transform.SetParent(boxSpawner.transform);
+		} else {
+			//*TO DO**** WEIRD ERROR HERE
+			this.transform.position = character.transform.position;
 		}
 	}
 }

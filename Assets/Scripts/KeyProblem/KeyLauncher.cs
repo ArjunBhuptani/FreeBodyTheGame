@@ -29,12 +29,10 @@ public class KeyLauncher : MonoBehaviour {
 	void Update () {
 		if(rotating){
 			float finalAngle = 90f - angle;
-			float speed = (finalAngle - startAngle)/1.5f;
-			//fix rotation issue
+			float angleDifference = finalAngle - startAngle;
+			float speed = angleDifference/1.5f;
 			transform.Rotate(Vector3.forward*speed*Time.deltaTime);
 			float currentAngle = 90-transform.eulerAngles.z;
-			Debug.Log("Final angle: " + angle);
-			Debug.Log("Current angle: " + currentAngle);
 			if(transform.eulerAngles.z <= finalAngle + 0.5 && transform.eulerAngles.z >= finalAngle - 0.5){
 				rotating = false;
 				activateButton();
@@ -72,7 +70,7 @@ public class KeyLauncher : MonoBehaviour {
 		angleText.text = ("Angle: " + angle);
 
 		//**move launcher to angle slowly
-		startAngle = transform.rotation.z;
+		startAngle = this.transform.rotation.eulerAngles.z;
 		rotating = true;
 
 	}

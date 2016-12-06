@@ -13,6 +13,7 @@ public class exitDoor : MonoBehaviour {
 
 	void OnTriggerEnter(Collider col){
 		if (col.name == controller.name){
+			levelManager.setWinCondition();
 			levelManager.LoadNextLevel();
 		}
 	}
