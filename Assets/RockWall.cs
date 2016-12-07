@@ -19,8 +19,8 @@ public class RockWall : MonoBehaviour {
 		
 	}
 
-	void OnTriggerEnter(Collider col){
-		if (col.name == "Cart"){
+	void OnCollisionEnter(Collision col){
+		if (col.collider.name == "Cart"){
 			Debug.Log("Cart hit wall");
 			//some conditions about force of collision
 			levelManager.setWinCondition();
@@ -32,7 +32,9 @@ public class RockWall : MonoBehaviour {
 				boulder.GetComponent<Rigidbody>().drag = 1;
 			}
 			cart.wallBroken = true;
-			GameObject.Destroy(this);
+			Destroy(this.GetComponent<Collider>());
+			Destroy(this.GetComponent<Rigidbody>());
+			Destroy(this);
 		}
 	}
 }

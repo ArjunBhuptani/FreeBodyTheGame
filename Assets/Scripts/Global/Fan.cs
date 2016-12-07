@@ -11,9 +11,11 @@ public class Fan : MonoBehaviour {
 	private Objects fanObjects;
 	private Objects[] roomObjects;
 	private Transform fanBlades;
+	private SpriteRenderer bolt;
 
 	// Use this for initialization
 	void Start () {
+		bolt = this.GetComponentInChildren<SpriteRenderer>();
 		fanObjects = GetComponent<Objects>();
 
 		foreach(Transform child in transform){
@@ -28,11 +30,14 @@ public class Fan : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		bolt.transform.Rotate(Vector3.up*90*Time.deltaTime);
+
 		isPowered = fanObjects.getPoweredBool();
 		isLifted = fanObjects.getLiftedBool();
 
 		if(isPowered){
 			rotateBlades();
+			bolt.enabled = false;
 
 			if(!isLifted){
 				roomObjects = FindObjectsOfType<Objects>();
