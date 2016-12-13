@@ -24,7 +24,7 @@ public class Plank : MonoBehaviour {
 			//rb.constraints = RigidbodyConstraints.None;
 		}
 
-		float distance = Mathf.Round(5f - this.transform.position.x);
+		float distance = Mathf.Round((5f - this.transform.position.x)*10f)/10f;
 		distanceWall.text = ("Distance to Wall: " + distance);
 	}
 }

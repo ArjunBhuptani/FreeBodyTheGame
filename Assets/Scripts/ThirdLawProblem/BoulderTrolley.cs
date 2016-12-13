@@ -7,11 +7,13 @@ public class BoulderTrolley : MonoBehaviour {
 	private LevelManager levelManager;
 	private Fan fan;
 	private Vector3 startPostion;
+	private GameObject fanSocket;
 
 	// Use this for initialization
 	void Start () {
 		levelManager = FindObjectOfType<LevelManager>();
 		fan = FindObjectOfType<Fan>();
+		fanSocket = GameObject.Find("FanSocket");
 		rb = GetComponent<Rigidbody>();
 		rb.constraints = RigidbodyConstraints.FreezePositionZ;
 		startPostion = this.transform.position;
@@ -20,7 +22,8 @@ public class BoulderTrolley : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (this.transform.position != startPostion){
-			fan.transform.parent = this.transform;
+			fan.transform.position = fanSocket.transform.position;
+			fan.transform.parent = fanSocket.transform;
 		}
 
 		if (this.transform.position.x <= -2 || this.transform.position.x >= 2){

@@ -51,7 +51,8 @@ public class KeyLauncher : MonoBehaviour {
 		key = FindObjectOfType<Key>();
 		Rigidbody rb = key.GetComponent<Rigidbody>();
 		rb.isKinematic = false;
-		rb.velocity = new Vector3 (velocity*Mathf.Sin(Mathf.Deg2Rad*angle), velocity*Mathf.Cos(Mathf.Deg2Rad*angle), 0);
+		Debug.Log("Launched with angle: " + angle + " and velocity: " + velocity); 	
+		rb.velocity = new Vector3 (velocity*Mathf.Sin(Mathf.Deg2Rad*(90f-angle)), velocity*Mathf.Cos(Mathf.Deg2Rad*angle), 0);
 
 		//set up for next key launch
 		LoadNextKey();

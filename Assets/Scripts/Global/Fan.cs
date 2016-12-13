@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Fan : MonoBehaviour {
 
-	public float forceValue = 50;
+	public float forceValue;
 
 	private bool isPowered = false;
 	private bool isLifted = false;
