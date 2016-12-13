@@ -40,7 +40,7 @@ public class MirrorBox : MonoBehaviour {
 			this.transform.SetParent(boxSpawner.transform);
 		} else {
 			//*TO DO**** WEIRD ERROR HERE
-			this.transform.position = character.transform.position;
+			//this.transform.position = character.transform.position;
 		}
 	}
 }

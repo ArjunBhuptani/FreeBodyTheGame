@@ -11,11 +11,10 @@ public class Fan : MonoBehaviour {
 	private Objects fanObjects;
 	private Objects[] roomObjects;
 	private Transform fanBlades;
-	private SpriteRenderer bolt;
+
 
 	// Use this for initialization
 	void Start () {
-		bolt = this.GetComponentInChildren<SpriteRenderer>();
 		fanObjects = GetComponent<Objects>();
 
 		foreach(Transform child in transform){
@@ -30,14 +29,12 @@ public class Fan : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		bolt.transform.Rotate(Vector3.up*90*Time.deltaTime);
 
 		isPowered = fanObjects.getPoweredBool();
 		isLifted = fanObjects.getLiftedBool();
 
 		if(isPowered){
 			rotateBlades();
-			bolt.enabled = false;
 
 			if(!isLifted){
 				roomObjects = FindObjectsOfType<Objects>();
@@ -50,7 +47,7 @@ public class Fan : MonoBehaviour {
 	}
 
 	void rotateBlades(){
-		fanBlades.Rotate(Vector3.up*180*Time.deltaTime);
+		fanBlades.Rotate(Vector3.up*320*Time.deltaTime);
 	}
 
 	void checkPosition(Objects obj){
@@ -66,12 +63,10 @@ public class Fan : MonoBehaviour {
 	}
 
 	void addForce(Objects obj){
-		Collider col = this.GetComponent<Collider>();
-		col.enabled = false;
 
-		Rigidbody rb = obj.GetComponent<Rigidbody>();
-		rb.isKinematic = false;
-		rb.AddForce(transform.up*forceValue);
+		Rigidbody objRB = obj.GetComponent<Rigidbody>();
+		objRB.isKinematic = false;
+		objRB.AddForce(transform.up*forceValue);
 
 	}
 }

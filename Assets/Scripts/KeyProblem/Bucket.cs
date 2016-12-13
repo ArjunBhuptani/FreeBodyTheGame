@@ -15,7 +15,7 @@ public class Bucket : MonoBehaviour {
 
 	void Update(){
 		float distance = this.transform.position.x - (-5f);
-		text.text = ("Distance: " + Mathf.Round(distance));
+		text.text = ("Distance: " + Mathf.Round(distance*10f)/10f);
 	}
 
 	void OnCollisionEnter (Collision col){

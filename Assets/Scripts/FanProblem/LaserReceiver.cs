@@ -16,13 +16,11 @@ public class LaserReceiver : MonoBehaviour {
 	void Update(){
 		if (chargingCounter >= 50){
 			levelManager.setWinCondition();
-			Debug.Log("win condition");
 		}
 	}
 
 	void OnParticleCollision(GameObject other){
 		chargingCounter++;
-		Debug.Log("Charging counter: " + chargingCounter);
 		if(chargingCounter <= 50){
 			//***FIX Color ISSUE***
 			ren.material.color = new Color(256/50*chargingCounter,0,0,256/50*chargingCounter);

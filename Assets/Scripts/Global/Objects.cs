@@ -8,20 +8,23 @@ public class Objects : MonoBehaviour {
 	public bool isMovable;
 	public float proximityRange = 1f;
 
+
 	private bool isLifted = false;
 	private bool isPowered = false;
 	private Character character;
 	private Battery battery;
-	private float originalHeight;
+	private SpriteRenderer bolt;
 
 	// Use this for initialization
 	void Start () {
 		character = FindObjectOfType<Character>();
-
 		// ***TO DO****need to find solution if there is more than one battery!
 		battery = FindObjectOfType<Battery>();
 
-		originalHeight = this.transform.position.y;
+		if(needsPower){
+			bolt = GameObject.Find("Bolt").GetComponent<SpriteRenderer>();
+		}
+
 	}
 	
 	// Update is called once per frame
@@ -34,7 +37,7 @@ public class Objects : MonoBehaviour {
 						liftObject();
 					}
 				}
-			}//***TO DO*** EVERYTHING IS LIFTING WTF
+			}
 		} else {
 			if (isLiftable){
 				if (Input.GetKeyUp(KeyCode.E)){
@@ -50,6 +53,10 @@ public class Objects : MonoBehaviour {
 
 		if (!isPowered){
 			if (needsPower){
+
+				bolt.transform.position = new Vector3(this.transform.position.x, this.transform.position.y + 1.5f, this.transform.position.z);
+				bolt.transform.Rotate(Vector3.up*90*Time.deltaTime);
+
 				Objects batteryObjects = battery.GetComponent<Objects>();
 				if (Vector3.Distance(battery.transform.position, this.transform.position) <= proximityRange){
 					if (!batteryObjects.isLifted){
@@ -58,6 +65,8 @@ public class Objects : MonoBehaviour {
 					}
 				}
 			}
+		} else {
+			bolt.enabled = false;
 		}
 	
 	}
@@ -69,7 +78,7 @@ public class Objects : MonoBehaviour {
 		Collider col = GetComponent<Collider>();
 		col.enabled = false;
 
-		this.transform.position = new Vector3 (character.transform.position.x, character.transform.position.y + 1, character.transform.position.z);
+		this.transform.position = new Vector3(character.transform.position.x + character.transform.forward.x, character.transform.position.y + character.transform.forward.y + 1, character.transform.position.z + character.transform.forward.z);
 
 		this.transform.parent = character.transform;
 
@@ -89,10 +98,7 @@ public class Objects : MonoBehaviour {
 		//drop and unattach from controller
 		this.transform.SetParent(null);
 
-		this.transform.position = new Vector3 (transform.position.x, originalHeight, transform.position.z);
-
-		Collider col = GetComponent<Collider>();
-		col.enabled = true;
+		this.transform.position = new Vector3 (transform.position.x, transform.position.y, transform.position.z);
 
 		character.isLiftingSomething = false;
 		isLifted = false;
@@ -104,6 +110,9 @@ public class Objects : MonoBehaviour {
 			rb.useGravity = true;
 			Debug.Log("enabling rb for " +  this.name);
 		}
+
+		Collider col = GetComponent<Collider>();
+		col.enabled = true;
 	}
 
 	void powerObject(){

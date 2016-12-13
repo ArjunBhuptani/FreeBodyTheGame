@@ -34,11 +34,9 @@ public class Cart : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		this.GetComponentInChildren<SpriteRenderer>().transform.Rotate(Vector3.up*90*Time.deltaTime);
 
 		if(cartObjects.getPoweredBool()){
 			isPowered = true;
-			this.GetComponentInChildren<SpriteRenderer>().enabled = false;
 		}
 
 		if(isPowered && Vector3.Distance(character.transform.position, this.transform.position) <= 2){
