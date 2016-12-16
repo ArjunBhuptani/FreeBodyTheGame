@@ -14,14 +14,14 @@ public class LaserReceiver : MonoBehaviour {
 	}
 
 	void Update(){
-		if (chargingCounter >= 50){
+		if (chargingCounter >= 30){
 			levelManager.setWinCondition();
 		}
 	}
 
 	void OnParticleCollision(GameObject other){
 		chargingCounter++;
-		if(chargingCounter <= 50){
+		if(chargingCounter <= 30){
 			//***FIX Color ISSUE***
 			ren.material.color = new Color(256/50*chargingCounter,0,0,256/50*chargingCounter);
 		}

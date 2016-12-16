@@ -15,7 +15,7 @@ public class Cart : MonoBehaviour {
 	private bool isPowered, charInCart = false;
 	private Text DistanceWall, ResistiveForce;
 	private InputField ForwardForce;
-	private GameObject RockWall;
+	private RockWall rockWall;
 
 	// Use this for initialization
 	void Start () {
@@ -24,9 +24,9 @@ public class Cart : MonoBehaviour {
 		DistanceWall = GameObject.Find("DistanceWall").GetComponent<Text>();
 		ResistiveForce = GameObject.Find("ResistiveForce").GetComponent<Text>();
 		ForwardForce = FindObjectOfType<InputField>();
-		RockWall = GameObject.Find("Rock Wall");
+		rockWall = FindObjectOfType<RockWall>();
 
-		distanceToWall = Vector3.Distance(RockWall.transform.position, this.transform.position);
+		distanceToWall = Vector3.Distance(rockWall.transform.position, this.transform.position);
 
 		DistanceWall.text = ("Distance to Wall: " + distanceToWall);
 		ResistiveForce.text = ("Resistive Force: " + resistiveForce);
@@ -69,6 +69,7 @@ public class Cart : MonoBehaviour {
 		float finalForce = cartForce - resistiveForce;
 		float acceleration = finalForce/cartPlayerMass;
 		float currentVelocity = lastVelocity + acceleration * Time.deltaTime;
+		rockWall.finalForce = currentVelocity*cartPlayerMass;
 
 		//Debug.Log("CurrentVelocity: " + currentVelocity);
 		float cartPosX = this.transform.position.x + currentVelocity*Time.deltaTime;

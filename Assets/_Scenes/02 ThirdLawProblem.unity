@@ -366,7 +366,7 @@ Prefab:
     - target: {fileID: 224000013969537288, guid: 6d8ec8f789b296849a9cbd8b09369778,
         type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 224000013969537288, guid: 6d8ec8f789b296849a9cbd8b09369778,
         type: 2}
@@ -559,6 +559,65 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 74ca9d063e2e963458b7e726b726af3d, type: 2}
   m_IsPrefabParent: 0
+--- !u!1001 &914038374
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1185717521}
+    m_Modifications:
+    - target: {fileID: 4000013800238496, guid: 33b11a4f3a8d44943b55d98368ab1ec2, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013800238496, guid: 33b11a4f3a8d44943b55d98368ab1ec2, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0.60240966
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013800238496, guid: 33b11a4f3a8d44943b55d98368ab1ec2, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -0.7228917
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013800238496, guid: 33b11a4f3a8d44943b55d98368ab1ec2, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013800238496, guid: 33b11a4f3a8d44943b55d98368ab1ec2, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013800238496, guid: 33b11a4f3a8d44943b55d98368ab1ec2, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013800238496, guid: 33b11a4f3a8d44943b55d98368ab1ec2, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013800238496, guid: 33b11a4f3a8d44943b55d98368ab1ec2, type: 2}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013800238496, guid: 33b11a4f3a8d44943b55d98368ab1ec2, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 1.4515892
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013800238496, guid: 33b11a4f3a8d44943b55d98368ab1ec2, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 0.14515896
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013800238496, guid: 33b11a4f3a8d44943b55d98368ab1ec2, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 1.4515892
+      objectReference: {fileID: 0}
+    - target: {fileID: 23000010965973956, guid: 33b11a4f3a8d44943b55d98368ab1ec2,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 33b11a4f3a8d44943b55d98368ab1ec2, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &922012429
 GameObject:
   m_ObjectHideFlags: 0
@@ -581,7 +640,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 922012429}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0, y: 1.5, z: -0.5}
+  m_LocalPosition: {x: -0, y: 1.75, z: -0.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
@@ -686,7 +745,7 @@ Prefab:
     - target: {fileID: 224000010932111152, guid: a58ff5ba9ec8047488ed60d01d96970e,
         type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 224000010932111152, guid: a58ff5ba9ec8047488ed60d01d96970e,
         type: 2}
@@ -1243,6 +1302,155 @@ RectTransform:
   m_PrefabParentObject: {fileID: 224000011383095944, guid: 6f98fecaa305a7949af1b9ec474a3e09,
     type: 2}
   m_PrefabInternal: {fileID: 1613454857}
+--- !u!1 &1635393462
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 224: {fileID: 1635393463}
+  - 222: {fileID: 1635393465}
+  - 114: {fileID: 1635393464}
+  m_Layer: 5
+  m_Name: MovableInstructions
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1635393463
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1635393462}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 2101377074}
+  m_RootOrder: 4
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -125}
+  m_SizeDelta: {x: 609, y: 51}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1635393464
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1635393462}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 0.88965523, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 18
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 40
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: Hmm, that cart seems to be in your way. Perhaps you can use the fan to move
+    it somehow...?
+--- !u!222 &1635393465
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1635393462}
+--- !u!1 &1639439211
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 224: {fileID: 1639439212}
+  - 222: {fileID: 1639439214}
+  - 114: {fileID: 1639439213}
+  m_Layer: 5
+  m_Name: PowerInstructions
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1639439212
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1639439211}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 2101377074}
+  m_RootOrder: 3
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -114}
+  m_SizeDelta: {x: 609, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1639439213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1639439211}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 0.88965523, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 18
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 40
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: Powered objects require electricity to work, try grabbing that yellow battery.
+--- !u!222 &1639439214
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1639439211}
 --- !u!4 &1684646310 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4000010340556758, guid: 63ebadd2fb581ed45907bc486c0469d8,
@@ -1647,6 +1855,8 @@ RectTransform:
   - {fileID: 1904157986}
   - {fileID: 1613454858}
   - {fileID: 1985865669}
+  - {fileID: 1639439212}
+  - {fileID: 1635393463}
   - {fileID: 299824248}
   - {fileID: 246602005}
   m_Father: {fileID: 0}
